@@ -13,7 +13,8 @@ class PageController extends Controller
      */
     public function index()
     {
-        return 'Selamat Datang';
+        return "<center><h2> WELCOME </h2><br> 
+        <a href='https://www.educastudio.com/contact-us'>Contact Us</a></center>";
     }
 
     public function about()
@@ -86,5 +87,64 @@ class PageController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    //public function news()
+    //{
+        //echo" Tampilkan Link Product <br>
+        
+          //  <ul>
+            //    <li>
+              //  <a href='https://www.educastudio.com/news'>Berita 1</a>
+                //</li>
+                //<li>
+                  //  <a href='https://www.educastudio.com/news/educa-studio-berbagi-untuk-warga-sekitarterdampak-covid-19'>Berita 2</a>
+                //</li>
+                
+            //</ul>
+       // ";
+
+       public function news(){
+        echo " Menampilkan Daftar berita
+        <ul>
+            <li>
+                <a href='https://www.educastudio.com/news'>Berita 1</a>
+            </li>
+            <li>
+                <a href='https://www.educastudio.com/news/educa-studio-berbagi-untuk-warga-sekitar-terdampak-covid-19'>Berita 2</a>
+            </li>
+        </ul>";
+    }
+
+    public function aboutus(){
+        echo " <h1>Menampilkan About Us</h1>
+        <a href='https://www.educastudio.com/about-us'>About Us</a>";
+
+    }
+
+    public function contact(){
+        echo "<h1>Menampilkan Contact Us</h1>
+        <a href='https://www.educastudio.com/contact-us'>Contact Us</a>";
+    }
+
+    
+
+
+
+    public function program()
+    {
+
+        echo " Menampilkan Daftar Program
+        <ul>
+            <li>
+                <a href='https://www.educastudio.com/program/karir'>Program 1</a>
+            </li>
+            <li>
+                <a href='https://www.educastudio.com/program/magang'>Program 2</a>
+            </li>
+            <li>
+                <a href='https://www.educastudio.com/program/kunjungan-industri'>Program 3</a>
+            </li>
+        </ul>";
     }
 }
