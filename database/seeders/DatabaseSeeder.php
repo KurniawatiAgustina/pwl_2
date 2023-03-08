@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\MataKuliah;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,9 +17,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            //KendaraanSeeder::class,
-            //HobiSeeder::class
+            KendaraanSeeder::class,
+            HobiSeeder::class,
             KeluargaSeeder::class
+           //MatakuliahSeeder::class
         ]);
     }
 }

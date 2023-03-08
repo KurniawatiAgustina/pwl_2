@@ -8,9 +8,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KeluargaController;
 use App\Http\Controllers\KendaraanController;
 use App\Http\Controllers\KuliahController;
+use App\Http\Controllers\MataKuliahController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
+use App\Models\MataKuliah;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
@@ -104,3 +106,4 @@ Route::get('/kendaraan', [KendaraanController::class, 'index']);
 //TUGAS 3 PERTEMUAN 4
 Route::get('/hobi', [HobiController::class, 'index']);
 Route::get('/keluarga', [KeluargaController::class, 'index']);
+Route::get('/matakuliah', [MataKuliahController::class, 'index']);
