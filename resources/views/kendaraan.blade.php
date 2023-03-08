@@ -6,7 +6,7 @@
     <!--Default box-->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">HOBI </h3>
+            <h3 class="card-title"> Kendaraan </h3>
 
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widge="collapse" title="Collapse">
@@ -22,20 +22,24 @@
                 <body>
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th>NAMA</th>
-                            <th>HOBI</th>
-                            <th>ALASAN</th>
+                   
+                            <th>NOPOL</th>
+                            <th>MERK</th>
+                            <th>JENIS</th>
+                            <th>TAHUN_BUAT</th>
+                            <th>WARNA</th>
                             
                         </tr>
                     </thead>
                 </body>
-                @foreach ($hobi as $no => $h)
+                @foreach ($kendaraan as $no => $k)
                 <tr>
-                    <td>{{$h->no}}</td>
-                    <td>{{$h->nama}}</td>
-                    <td>{{$h->hobi}}</td>
-                    <td>{{$h->alasan}}</td>
+                
+                    <td>{{$k->no_pol}}</td>
+                    <td>{{$k->merk}}</td>
+                    <td>{{$k->jenis}}</td>
+                    <td>{{$k->tahun_buat}}</td>
+                    <td>{{$k->warna}}</td>
                   
                 </tr>
                     
