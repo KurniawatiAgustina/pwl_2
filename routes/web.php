@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HobiController;
 use App\Http\Controllers\HomeController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
 use App\Models\MataKuliah;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
@@ -73,37 +75,55 @@ use Symfony\Component\HttpKernel\Profiler\Profile;
 
 // Route::resource('contact-us', PageController::class)->only(['index']);
 
-//PRAKTIKUM 1 PERTEMUAN 3
-Route::get('/home', [PagesController::class, 'home']);
 
-Route::prefix('product') ->group(function (){
-    Route::get('/', [PagesController::class, 'product']);
+
+
+
+
+//PRAKTIKUM PERTEMUAN 6
+Auth::routes();
+Route::get('/logout', [LoginController::class, 'logout']);
+
+Route::middleware(['auth'])->group(function() {
+    //PRAKTIKUM 1 PERTEMUAN 3
+    //Route::get('/home', [PagesController::class, 'home']);
+
+    Route::prefix('product') ->group(function (){
+        Route::get('/', [PagesController::class, 'product']);
+    });
+
+    Route::get('/news/{param}', [PagesController::class, 'news']);
+
+    Route::prefix('program')->group(function () {
+            Route::get('/', [PagesController::class, 'program']);
+        });
+
+    Route::get('/aboutus', [PagesController::class, 'aboutus']);
+
+    Route::resource('contact-us', PagesController::class)->only(['index']);
+
+
+
+    //PRAKTIKUM 2 PERTEMUAN 3
+
+    Route::get('/pwl3', function (){
+        return view ('layout.template');
+    });
+
+    Route::get('/', [DashboardController::class, 'index']);
+    Route::get('/dashboard', [DashboardController::class, 'index']);
+    Route::get('/profile', [ProfileController::class, 'index']);
+    Route::get('/kuliah', [KuliahController::class, 'index']);
+
+    //PRAKTIKUM 3 PERTEMUAN 4
+    Route::get('/kendaraan', [KendaraanController::class, 'index']);
+
+    //TUGAS 3 PERTEMUAN 4
+    Route::get('/hobi', [HobiController::class, 'index']);
+    Route::get('/keluarga', [KeluargaController::class, 'index']);
+    Route::get('/matakuliah', [MataKuliahController::class, 'index']);
+    //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 });
 
-Route::get('/news/{param}', [PagesController::class, 'news']);
 
-Route::prefix('program')->group(function () {
-        Route::get('/', [PagesController::class, 'program']);
-       });
-
-Route::get('/aboutus', [PagesController::class, 'aboutus']);
-
-Route::resource('contact-us', PagesController::class)->only(['index']);
-
-//PRAKTIKUM 2 PERTEMUAN 3
-
-Route::get('/pwl3', function (){
-    return view ('layout.template');
-});
-
-Route::get('/dashboard', [DashboardController::class, 'index']);
-Route::get('/profile', [ProfileController::class, 'index']);
-Route::get('/kuliah', [KuliahController::class, 'index']);
-
-//PRAKTIKUM 3 PERTEMUAN 4
-Route::get('/kendaraan', [KendaraanController::class, 'index']);
-
-//TUGAS 3 PERTEMUAN 4
-Route::get('/hobi', [HobiController::class, 'index']);
-Route::get('/keluarga', [KeluargaController::class, 'index']);
-Route::get('/matakuliah', [MataKuliahController::class, 'index']);
