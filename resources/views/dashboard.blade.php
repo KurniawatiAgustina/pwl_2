@@ -6,9 +6,7 @@
     <!--Default box-->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Hello everyone</h3>
-            <br>
-            <h4 class="card-title">Semoga Selalu Sehat Selalu </h4>
+            <h3 class="card-title">DATA Mahasiswa</h3>
 
             {{-- <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widge="collapse" title="Collapse">
@@ -19,23 +17,10 @@
                 </button>
             </div> --}}
         </div>
-        {{-- <div class="card-body">
-            Start creating your amazing application!
-        </div> --}}
-
-        <!-- /.card-body -->
-        {{-- <div class="card=footer">
-            Footer
-        </div> --}}
-
-        <!-- /.card-footer -->
+        <div class="card-body">
+              
     </div>
     <!-- /.card -->
 
-</section>
-@push('js')
-<script>
-    alert('Welcome')
-   </script>
-
+    </section>
 @endsection

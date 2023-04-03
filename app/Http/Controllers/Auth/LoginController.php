@@ -49,4 +49,9 @@ class LoginController extends Controller
             'password' => 'required|string',
         ]);
     }
+
+    public function username()
+    {
+        return 'username';
+    }
 }
