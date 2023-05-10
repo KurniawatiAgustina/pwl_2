@@ -24,7 +24,7 @@
                         <tr>
                             <th>No</th>
                             <th>KODE</th>
-                            <th>Nama Mata Kuliah</th>
+                            <th>Mata Kuliah</th>
                             <th>Dosen Pengampu</th>
                             <th>SKS</th>
                             <th>Jam</th>
