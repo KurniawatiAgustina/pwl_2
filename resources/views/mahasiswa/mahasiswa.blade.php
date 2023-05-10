@@ -6,7 +6,7 @@
     <!--Default box-->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Data Mahasiswa</h3>
+            <h3 class="card-title">JURUSAN TEKNOLOGI INFORMASI-POLITEKNIK NEGERI MALANG</h3>
 
             {{-- <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widge="collapse" title="Collapse">
@@ -27,6 +27,7 @@
                     <th>No</th>
                     <th>NIM</th>
                     <th>Nama</th>
+                    <th>Kelas</th>
                     <th>Jk</th>
                     <th>HP</th>
                     <th>Tempat Lahir</th>
@@ -42,6 +43,7 @@
                   <td>{{++$i}}</td>
                   <td>{{$m->nim}}</td>
                   <td>{{$m->nama}}</td>
+                  <td>{{$m->kelas->nama_kelas}}</td>
                   <td>{{$m->jk}}</td>
                   <td>{{$m->hp}}</td>
                   <td>{{$m->tempat_lahir}}</td>
@@ -49,6 +51,8 @@
                   <td>{{$m->alamat}}</td>
                   <td>
                     {{-- Bikin simbol edit dan delete --}}
+                    <a href="{{url('/mahasiswa/'. $m->id)}}"
+                        class="btn btn-sm btn-primary">Show</a>
                     <a href="{{ url('/mahasiswa/'.$m->id.'/edit')}}" class="btn btn-sm btn-warning">edit</a>
 
                     <form class="inline" method="POST" action="{{ url('/mahasiswa/'.$m->id) }}">
