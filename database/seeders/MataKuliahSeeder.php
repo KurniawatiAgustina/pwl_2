@@ -15,9 +15,9 @@ class MatakuliahSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('matakuliah')->insert([
+        DB::table('matkul')->insert([
             [
-                'kode'=> 'RTI211001',
+                'kode'=> 'RTI211876',
                 'nama_mk' => 'Pancasila',
                 'dosen' => 'Widaningsih Condrowardhani, SH, MH.',
                 'sks' => '2',

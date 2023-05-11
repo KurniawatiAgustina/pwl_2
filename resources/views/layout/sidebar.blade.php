@@ -65,6 +65,8 @@
                     </a>
 
         </li>
+    
+</li>
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

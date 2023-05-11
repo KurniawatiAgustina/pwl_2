@@ -89,27 +89,27 @@ Route::middleware(['auth'])->group(function() {
     //PRAKTIKUM 1 PERTEMUAN 3
     //Route::get('/home', [PagesController::class, 'home']);
 
-    Route::prefix('product') ->group(function (){
-        Route::get('/', [PagesController::class, 'product']);
-    });
+    // Route::prefix('product') ->group(function (){
+    //     Route::get('/', [PagesController::class, 'product']);
+    // });
 
-    Route::get('/news/{param}', [PagesController::class, 'news']);
+    // Route::get('/news/{param}', [PagesController::class, 'news']);
 
-    Route::prefix('program')->group(function () {
-            Route::get('/', [PagesController::class, 'program']);
-        });
+    // Route::prefix('program')->group(function () {
+    //         Route::get('/', [PagesController::class, 'program']);
+    //     });
 
-    Route::get('/aboutus', [PagesController::class, 'aboutus']);
+    // Route::get('/aboutus', [PagesController::class, 'aboutus']);
 
-    Route::resource('contact-us', PagesController::class)->only(['index']);
+    // Route::resource('contact-us', PagesController::class)->only(['index']);
 
 
 
-    //PRAKTIKUM 2 PERTEMUAN 3
+    // //PRAKTIKUM 2 PERTEMUAN 3
 
-    Route::get('/pwl3', function (){
-        return view ('layout.template');
-    });
+    // Route::get('/pwl3', function (){
+    //     return view ('layout.template');
+    // });
 
     Route::get('/', [DashboardController::class, 'index']);
     Route::get('/dashboard', [DashboardController::class, 'index']);
@@ -120,13 +120,17 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/kendaraan', [KendaraanController::class, 'index']);
 
     //TUGAS 3 PERTEMUAN 4
-    Route::get('/hobi', [HobiController::class, 'index']);
+    // Route::get('/hobi', [HobiController::class, 'index']);
     Route::get('/keluarga', [KeluargaController::class, 'index']);
     Route::get('/matakuliah', [MataKuliahController::class, 'index']);
     //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     //
-    Route::resource('/mahasiswa',MahasiswaController::class)->parameter('mahasiswa','id');
+    Route::resource('/mahasiswa', MahasiswaController::class)->parameter('mahasiswa','id');
+    // Route::get('/mahasiswa/{id}/khs',[MahasiswaController::class,'khs']);
+    Route::get('/mahasiswa/{id}/khs',[MahasiswaController::class,'khs']);
+    // Route::get('/mahasiswa/{id}/show',[MahasiswaController::class, 'nilai']);   
+    Route::get('/mahasiswa/{id}/khs',[MahasiswaController::class,'khs']);
 
 });
 

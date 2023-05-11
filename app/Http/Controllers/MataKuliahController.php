@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\MataKuliah;
-use App\Models\MataKuliahModel;
+use App\Models\MatkulModel as MataKuliahModel;
 use Illuminate\Http\Request;
 
 class MataKuliahController extends Controller

@@ -20,7 +20,10 @@ class DatabaseSeeder extends Seeder
             KendaraanSeeder::class,
             HobiSeeder::class,
             KeluargaSeeder::class,
-           MatakuliahSeeder::class
+            MatakuliahSeeder::class,
+            MahasiswaSeeder::class,
+            UserSeeder::class,
+            KelasSeeder::class,
         ]);
     }
 }

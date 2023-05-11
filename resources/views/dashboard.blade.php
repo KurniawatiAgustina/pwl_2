@@ -6,7 +6,7 @@
     <!--Default box-->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">DATA Mahasiswa</h3>
+            <h1 class="card-title"> DASHBOOARD MAHASISWA </h1>
 
             {{-- <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widge="collapse" title="Collapse">
