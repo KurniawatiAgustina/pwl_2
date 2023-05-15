@@ -132,6 +132,10 @@ Route::middleware(['auth'])->group(function() {
     // Route::get('/mahasiswa/{id}/show',[MahasiswaController::class, 'nilai']);   
     Route::get('/mahasiswa/{id}/khs',[MahasiswaController::class,'khs']);
 
+    // Praktikum 10
+    Route::resource('articles', ArticleController::class);
+
+
 });
 
 
