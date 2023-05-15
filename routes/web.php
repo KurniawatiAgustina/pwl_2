@@ -134,6 +134,7 @@ Route::middleware(['auth'])->group(function() {
 
     // Praktikum 10
     Route::resource('articles', ArticleController::class);
+    Route::get('/article/cetak' , [ArticleController::class, 'cetak_pdf']);
 
 
 });
