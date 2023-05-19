@@ -24,6 +24,8 @@
                         Detail Mahasiswa
                     </div>
         <div class="card-body">
+            <div class="d-flex justify-content-center">
+                <img src="{{ asset('storage/' . $mahasiswa->foto) }}" width="240">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><b>Nim : </b>{{$Mahasiswa->nim}}</li>
                 <li class="list-group-item"><b>Nama : </b>{{$Mahasiswa->nama}}</li>

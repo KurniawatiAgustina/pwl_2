@@ -12,14 +12,17 @@ class Mahasiswamodel extends Model
     protected $fillable = [
         'nim',
         'nama',
+        'foto',
         'jk' ,
         'tempat_lahir' ,
         'tanggal_lahir' ,
         'alamat',
         'hp',
-        'kelas_id'
+        'kelas_id',
+       
     ];
 
+  
     public function kelas (){
         return $this->belongsTo(KelasModel::class,'kelas_id','id');
 

@@ -16,7 +16,17 @@
                     <i class="fas fa-times"></i>
                 </button>
             </div> --}}
+
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
         </div>
+        
         <div class="card-body">
             <a href="{{ url('mahasiswa/create')}}" class="btn btn-sm
             btn-success">Tambah Data</a>
@@ -27,6 +37,7 @@
                     <th>No</th>
                     <th>NIM</th>
                     <th>Nama</th>
+                    <th>Image</th>
                     <th>Kelas</th>
                     <th>Jk</th>
                     <th>HP</th>
@@ -43,6 +54,9 @@
                   <td>{{++$i}}</td>
                   <td>{{$m->nim}}</td>
                   <td>{{$m->nama}}</td>
+                  <td>
+                    <img src="{{ asset('storage/' . $m->foto) }}" alt="{{ $m->nama }}" width="50">
+                </td>
                   <td>{{$m->kelas->nama_kelas}}</td>
                   <td>{{$m->jk}}</td>
                   <td>{{$m->hp}}</td>
@@ -54,7 +68,7 @@
                     <a href="{{url('/mahasiswa/'. $m->id)}}"
                         class="btn btn-sm btn-primary">Show</a>
                         <a href="{{url('/mahasiswa/'. $m->id.'/khs')}}"
-                            class="btn btn-sm btn-primary">KHS</a>
+                            class="btn btn-sm btn-primary">Nilai</a>
                     <a href="{{ url('/mahasiswa/'.$m->id.'/edit')}}" class="btn btn-sm btn-warning">edit</a>
 
                     <form class="inline" method="POST" action="{{ url('/mahasiswa/'.$m->id) }}">
@@ -68,8 +82,58 @@
                 </tr>
                 @endforeach
 
+                {{-- @else
+                @if ($mhs->count() > 0)
+                    @foreach($mhs as $i => $m)
+                        <tr>
+                            <td colspan="6" class="text-center">Data tidak ada</td>
+                            <td>{{ ++$i }}</td>
+                            <td>{{ $m->nim }}</td>
+                            <td>{{ $m->nama }}</td>
+                            <td>
+                                <img src="{{ asset('storage/' . $m->foto) }}" alt="{{ $m->nama }}" width="50">
+                            </td>
+                            <td>{{ $m->kelas->nama_kelas }}</td>
+                            <td>{{ $m->jk }}</td>
+                            <td>{{ $m->hp }}</td>
+                            <td class="">
+                                <a href="{{ url('/mahasiswa/' . $m->id) }}" class="btn btn-sm btn-info">
+                                    Show
+                                </a>
+                                <a href="{{ url('/mahasiswa/' . $m->id . '/edit') }}" class="btn btn-sm btn-warning">
+                                    Edit
+                                </a>
+                                <form class="d-inline" method="POST" action="{{ url('/mahasiswa/' . $m->id) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" href="{{ url('/mahasiswa/' . $m->id) }}"
+                                            class="btn btn-sm btn-danger">
+                                        Delete
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endif
+                    @endforeach --}}
                 @else
-                <tr><td colspan="9" class="text-center">Data Tidak Ada</td></tr>
+                    <tr>
+                        <td colspan="6" class="text-center">Data tidak ada</td>
+                    </tr>
+                @endif
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+            Footer
+        </div>
+        <!-- /.card-footer-->
+    </div>
+    <!-- /.card -->
+@endsection
+
+
+                {{-- <tr><td colspan="9" class="text-center">Data Tidak Ada</td></tr>
                     
                 @endif
             </tbody>      
@@ -78,4 +142,4 @@
     <!-- /.card -->
 
     </section>
-@endsection
+@endsection --}}

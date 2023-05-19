@@ -18,9 +18,28 @@
             </div> 
         </div>
         <div class="card-body">
-            <form method="POST" action="{{ $url_form }}">
+            <form method="POST" action="{{ $url_form }}"
+              <form method="POST" action="{{ $url_form }}" enctype="multipart/form-data">
                 @csrf
                 {!! (isset($mhs))? method_field('PUT') : '' !!}
+
+{{-- 
+                <div class="form-group">
+                     <small class="text-danger">{{ $message }}</small>
+               @enderror
+                 </div> --}}
+
+                
+
+              {{-- <div class="form-group">
+                <label>Image</label>
+                <input class="form-control @error('foto') is-invalid @enderror" value="{{ isset($mhs)? $mhs->foo: old('foto') }}" name="foto" type="text" />
+                @error('nim')
+                  <span class="error invalid-feedback">{{ $message }} </span>
+                @enderror
+              </div> --}}
+
+                 
                 <div class="form-group">
                   <label>Nim</label>
                   <input class="form-control @error('nim') is-invalid @enderror" value="{{ isset($mhs)? $mhs->nim: old('nim') }}" name="nim" type="text" />
@@ -28,6 +47,7 @@
                     <span class="error invalid-feedback">{{ $message }} </span>
                   @enderror
                 </div>
+
                 <div class="form-group">
                   <label>Nama</label>
                   <input class="form-control @error('nama') is-invalid @enderror" value="{{isset($mhs)? $mhs->nama:old('nama') }}" name="nama" type="text"/>
@@ -35,6 +55,14 @@
                     <span class="error invalid-feedback">{{ $message }} </span>
                   @enderror
                 </div>
+
+                <div class="form-group">
+                  <label for="inputNama">Image</label>
+                  <input type="file" id="inputNama" class="form-control" name="foto" value="" required="required">
+                  @error('foto')
+                    <small class="text-danger">{{ $message }}</small>
+                  @enderror
+              </div>
                 
                 <div class="form-group">
                   <label for="Kelas">Kelas</label>
@@ -47,7 +75,7 @@
                     <span class="error invalid-feedback">{{ $message }} </span>
                   @enderror
                 </div>
-
+        
                 <div class="form-group">
                   <label>JK</label>
                   <input class="form-control @error('jk') is-invalid @enderror" value="{{ isset($mhs)? $mhs->jk:old('jk') }}" name="jk" type="text"/>
@@ -55,6 +83,7 @@
                     <span class="error invalid-feedback">{{ $message }} </span>
                   @enderror
                 </div>
+
                 <div class="form-group">
                   <label>Tempat lahir</label>
                   <input class="form-control @error('tempat_lahir') is-invalid @enderror" value="{{ isset($mhs)? $mhs->tempat_lahir:old('tempat_lahir') }}" name="tempat_lahir" type="text"/>
@@ -62,6 +91,7 @@
                     <span class="error invalid-feedback">{{ $message }} </span>
                   @enderror
                 </div>
+
                 <div class="form-group">
                   <label>Tanggal Lahir</label>
                   <input class="form-control @error('tanggal_lahir') is-invalid @enderror" value="{{ isset($mhs)? $mhs->tanggal_lahir:old('tanggal_lahir') }}" name="tanggal_lahir" type="text"/>
@@ -69,6 +99,7 @@
                     <span class="error invalid-feedback">{{ $message }} </span>
                   @enderror
                 </div>
+                  
                 <div class="form-group">
                   <label>HP</label>
                   <input class="form-control @error('hp') is-invalid @enderror" value="{{ isset($mhs)? $mhs->hp:old('hp') }}" name="hp" type="text"/>
@@ -94,7 +125,12 @@
              
 
     </div>
-    <!-- /.card -->
+    <!-- /.card-body -->
+    {{-- <div class="card-footer">
+      Footer
+  </div> --}}
+  <!-- /.card-footer-->
+</div>
 
     </section>
 @endsection

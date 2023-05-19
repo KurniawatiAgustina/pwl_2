@@ -136,7 +136,10 @@ Route::middleware(['auth'])->group(function() {
     Route::resource('articles', ArticleController::class);
     Route::get('/article/cetak' , [ArticleController::class, 'cetak_pdf']);
 
-
+    // Latihan Praktikum 10
+    // Route::get('/mahasiswa/cetak_pdf'/{id}',[MahasiswaController::class, 'cetak_pdf']);
+    Route::get('/mahasiswa/cetak_pdf/{id}', [MahasiswaController::class, 'cetak_pdf']);
+        
 });
 
 
