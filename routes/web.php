@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
@@ -139,7 +140,9 @@ Route::middleware(['auth'])->group(function() {
     // Latihan Praktikum 10
     // Route::get('/mahasiswa/cetak_pdf'/{id}',[MahasiswaController::class, 'cetak_pdf']);
     Route::get('/mahasiswa/cetak_pdf/{id}', [MahasiswaController::class, 'cetak_pdf']);
-        
+      
+    
+   
 });
 
 
