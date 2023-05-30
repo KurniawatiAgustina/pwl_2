@@ -132,6 +132,7 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/mahasiswa/{id}/khs',[MahasiswaController::class,'khs']);
     // Route::get('/mahasiswa/{id}/show',[MahasiswaController::class, 'nilai']);   
     Route::get('/mahasiswa/{id}/khs',[MahasiswaController::class,'khs']);
+    
 
     // Praktikum 10
     Route::resource('articles', ArticleController::class);
@@ -140,9 +141,12 @@ Route::middleware(['auth'])->group(function() {
     // Latihan Praktikum 10
     // Route::get('/mahasiswa/cetak_pdf'/{id}',[MahasiswaController::class, 'cetak_pdf']);
     Route::get('/mahasiswa/cetak_pdf/{id}', [MahasiswaController::class, 'cetak_pdf']);
+
+ 
       
     
    
 });
+Route::post('/mahasiswa/data', [MahasiswaController::class, 'data']);
 
 

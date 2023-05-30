@@ -56,7 +56,7 @@
                   @enderror
                 </div>
 
-                <div class="form-group">
+                {{-- <div class="form-group">
                   <label for="inputNama">Image</label>
                   <input type="file" id="inputNama" class="form-control" name="foto" value="" required="required">
                   @error('foto')
@@ -98,7 +98,7 @@
                   @error('tanggal_lahir')
                     <span class="error invalid-feedback">{{ $message }} </span>
                   @enderror
-                </div>
+                </div> --}}
                   
                 <div class="form-group">
                   <label>HP</label>
@@ -107,7 +107,7 @@
                     <span class="error invalid-feedback">{{ $message }} </span>
                   @enderror
                 </div>
-                <div class="form-group">
+                {{-- <div class="form-group">
                   <label>alamat</label>
                   <input class="form-control @error('alamat') is-invalid @enderror" value="{{ isset($mhs)? $mhs->alamat:old('alamat') }}" name="alamat" type="text"/>
                   @error('alamat')
@@ -115,7 +115,7 @@
                   @enderror
                 </div>
     
-    
+     --}}
     
                 <div class="form-group">
                   <button class="btn btn-sm btn-primary">Simpan</button>
